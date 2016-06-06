@@ -38,17 +38,19 @@
 
         <div id="wrapper_new"style="margin:0;">
             <div id="header_new">
-                <?php include_once 'shared/slider.php'; ?>
+                <?php include_once 'shared/top.php'; ?>
             </div>
             <div class="clear"></div>
             <div style="height:40px;">&nbsp;</div>
             <div class="header_bg"></div>
+
+            <?php include_once 'shared/top_nav.php'; ?>
+
+
+
+
             <div class="main_content">
                 <div class="center_content">
-
-                    <div class=" float_left margin_right_10" style="width:16%;">
-                        <?php include_once 'shared/left_content.php'; ?>
-                    </div>
                     <div class="float_left" style="width:80%">
                         <?php
                         if ($dir == '') {
