@@ -1,6 +1,8 @@
 <?php $main_cat = common::get_main_cat() ?>
 <div class="demo">
     <style type="text/css">
+	
+	
         .sidebarmenu ul{
             margin: 0;
             padding: 0;

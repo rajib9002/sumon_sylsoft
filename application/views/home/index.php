@@ -2,7 +2,9 @@
 <!--one product start-->
 <?php foreach($all_product as $product):?>
 <div class="product_box margin_right_8 float_left margin_bottom_8">
-    <div class="product_img float_left">
+    
+	
+	<div class="product_img float_left">
         <a href="<?php echo site_url('product/product_des/'.$product['product_id'].'/'.$product['p_main_cat_id']).'/'.url_title($product['product_name'])?>">
            <?php if($product['image']!=''){?> 
             <img src="<?php echo base_url().'/uploads/product/thumb_'.$product['image']?>" alt="<?php echo $product['product_name']?>" width="74px" height="94px">
