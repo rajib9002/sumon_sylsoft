@@ -17,7 +17,7 @@
 
 <div class="ep_background">
     <ul class="ep_design">
-        <li><a  class="select_ep_design"  href="<?= site_url('home') ?>">HOME</a></li>
+<!--        <li><a  class="select_ep_design"  href="<?= site_url('home') ?>">HOME</a></li>-->
        
         <li style="float:right;">
             <a href="<?= site_url('product/view_cart') ?>">View Cart</a>

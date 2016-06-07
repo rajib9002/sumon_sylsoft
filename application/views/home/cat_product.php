@@ -1,4 +1,4 @@
-<div class="search_bg">
+<!--<div class="search_bg">
 <ul class="link_alp_bg">
     <li><a href="<?php echo site_url('product/sub_cat_list/'.$sub_id.'/'.'A')?>">A</a></li>
     <li><a href="<?php echo site_url('product/sub_cat_list/'.$sub_id.'/'.'B')?>">B</a></li>
@@ -29,7 +29,7 @@
 
 </ul>
 <div class="clear"></div>
-</div>
+</div>-->
 <div class="clear"></div>
 
 <div class="height_10"></div>

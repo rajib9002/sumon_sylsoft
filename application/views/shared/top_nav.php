@@ -8,13 +8,16 @@
         text-align: center;
         padding: 0;
         margin: 0;
+        text-align:left;
+        position: absolute;
+    z-index: 2;
+    width: 100%;
     }
 
     .nav li {
-        font-family: 'Oswald', sans-serif;
-        font-size: 1.2em;
         line-height: 40px;
         text-align: left;
+        
     }
 
     .nav a {
@@ -24,6 +27,7 @@
         padding-left: 15px;
         border-bottom: 1px solid #888;
         transition: .3s background-color;
+        font-size:14px;
     }
 
     .nav a:hover {
@@ -38,12 +42,12 @@
 
     /* Sub Menus */
     .nav li li {
-        font-size: .8em;
+
     }
 
     /*******************************************
        Style menu for larger screens
-    
+
        Using 650px (130px each * 5 items), but ems
        or other values could be used depending on other factors
     ********************************************/
@@ -54,7 +58,7 @@
             border-bottom: none;
             height: 50px;
             line-height: 50px;
-            font-size: 1.4em;
+            position:relative;
             display: inline-block;
             margin-right: -4px;
         }
@@ -76,13 +80,14 @@
         .nav li ul {
             position: absolute;
             display: none;
-            width: inherit;
+
+            width:200px;
         }
 
         .nav li:hover ul {
             display: block;
         }
-        
+
         .nav li:hover ul li ul {
             display: none;
         }
@@ -92,6 +97,29 @@
 
         .nav li ul li {
             display: block;
+            position:relative;
+            width:200px;
+
+            text-align:left;
+        }
+        .nav li i{
+            background-image: url('images/down_arrow.png');
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            text-align: right;
+            position: absolute;
+            right: 5px;
+            top: 17px;
+        }
+        .nav li ul li i{
+            background-image:url('images/right_arrow.png');
+            display:inline-block;
+            width:16px;height:16px;
+            text-align:right;
+            position: absolute;
+            right: 5px;
+            top: 17px;
         }
 
 
@@ -104,7 +132,9 @@
         position: absolute;
         display: none;
         top: 0;
-        left: 130px;
+        left: 200px;
+        width:200px;
+        text-align:left;
     }
 
     .nav li ul li:hover ul {
@@ -112,7 +142,14 @@
     }
     .nav li ul li ul li{
         display: block;
+        width:200px;
+        text-align:left;
     }
+    .nav li ul li a{text-align:left;}
+    .nav li ul li ul li a{text-align:left;}
+
+
+
 </style>
 
 
@@ -121,50 +158,52 @@
 
 
     <ul>
-        <li><a href="#">Test</a>
+        <li><a href="<?php echo site_url('home');?>">Home</a></li>
+        <?php foreach ($main_cat as $m_cat) { ?>
+        <li><a href="<?php echo site_url('product/sub_cat_list/' . $m_cat['id']) ?>"><?php echo $m_cat['category_name'] ?></a>
+
+                <?php $sub_cat = $this->mod_home->get_sub_cat($m_cat['id']);
+                if (count($sub_cat) > 0) {
+
+                    ?>
+            <i></i>
+
             <ul>
-                <li><a href="#">Test1</a>
+
+
+                        <?php
+                        foreach ($sub_cat as $sub) {
+                            ?>
+
+                <li><a href="<?php echo site_url('product/sub_cat_product/' . $sub['id']) ?>"><?php echo substr($sub['category_name'],0,22) ?></a>
+
+                                <?php
+                                $three_cat = $this->mod_home->get_sub_cat($sub['id']);
+                                if (count($three_cat) > 0) {?>
+
+                    <i></i>
                     <ul>
-                        <li><a href="#">Test2</a></li>
+                                        <?php
+                                        foreach ($three_cat as $third) { ?>
+                        <li><a href="<?php echo site_url('product/sub_cat_product/' . $third['id']) ?>"><?php echo substr($third['category_name'],0,22); ?></a></li>
+                                            <?php }
+
+                                        ?>
                     </ul>
+                                    <?php }?>
                 </li>
+                            <?php }
+
+                        ?>
             </ul>
+                    <?php }?>
 
         </li>
+            <?php }?>
     </ul>
 
 
-    <ul>
-        <?php foreach ($main_cat as $m_cat): ?>
-            <?php $sub_cat = $this->mod_home->get_sub_cat($m_cat['id']); ?>
-            <li><a href="<?php echo site_url('product/sub_cat_list/' . $m_cat['id']) ?>"><?php echo $m_cat['category_name'] ?></a>
-                <ul>
-                    <?php
-                    if (count($sub_cat) > 0):
-                        foreach ($sub_cat as $sub):
-                            ?>
-                            <?php $three_cat = $this->mod_home->get_sub_cat($sub['id']); ?>
-                            <?php if ($m_cat['hidden'] == 2) { ?>
-                                <li><a href="<?php echo site_url('product/brand_list/' . $sub['id']) ?>"><?php echo $sub['category_name'] ?></a></li>
-                            <?php } else { ?>
-                                <li><a href="<?php echo site_url('product/sub_cat_product/' . $sub['id']) ?>"><?php echo $sub['category_name'] ?></a>
-                                    <?php if (count($three_cat) > 0) { ?>
-                                        <ul>
-                                            <?php foreach ($three_cat as $third) { ?>
-                                                <li><a href="<?php echo site_url('product/sub_cat_product/' . $third['id']) ?>"><?php echo $third['category_name'] ?></a></li>
-                                            <?php } ?>
-                                        </ul>
-                                    <?php } ?>
-                                </li>
-                            <?php } ?>
-                            <?php
-                        endforeach;
-                    endif;
-                    ?>
-                </ul>
-            </li>
-        <?php endforeach; ?>
-    </ul>
+
 </div>
 
 

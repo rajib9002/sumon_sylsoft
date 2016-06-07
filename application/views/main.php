@@ -26,9 +26,9 @@
         }
         #footer_new {
             width:100%;
-            position:fixed;
+           /* position:fixed;
             bottom:0;
-            left:0;
+            left:0;*/
         }
     </style>
 
@@ -46,7 +46,7 @@
 
             <?php include_once 'shared/top_nav.php'; ?>
 
-
+            <?php include_once 'shared/slider.php'; ?>
 
 
             <div class="main_content">

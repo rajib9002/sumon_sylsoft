@@ -5,7 +5,6 @@
     <!--<link rel="shortcut icon" href="<?=base_url()?>images/favicon.ico" />-->
     <link href="style/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="scripts/jquery.js"></script>
-    <script type="text/javascript" src="scripts/easySlider1.7.js"></script>
     <link href="style/screen.css" rel="stylesheet" type="text/css" media="screen" />
 
 <!--    zoom-->
