@@ -1,4 +1,5 @@
 <?php $main_cat = common::get_main_cat() ?>
+<!--testing-->
 <style type="text/css">
 
     .nav ul {
