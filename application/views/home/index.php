@@ -49,7 +49,7 @@
                         <h4>$<?php echo $multiple_data[0]['price'] ?></h4>
                     </div>
 
-                    <!--<div class="color_area">
+                    <div class="color_area">
 
                         <div class="clear"></div>
                         <div class="quantity">
@@ -67,7 +67,7 @@
                                 <a href="javascript:void(0)" onclick="javascript:add_item(<?= $product['product_id'] ?>,<?= $multiple_data[0]['product_price_id']; ?>)"></a>
                             </div>
                         </div>
-                    </div>-->
+                    </div>
                 </div>
                 <?php if ($i == 5) { ?>
                 </li>
