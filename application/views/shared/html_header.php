@@ -1,8 +1,9 @@
 <head>
     <base href="<?= base_url()?>" />
-    <title>S R Shop Online::<?php echo $title ?></title>
+    <?php $site_info=common::get_settings_data();?>
+    <title><?php echo $site_info['company_name']?> :: <?php echo $title ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <!--<link rel="shortcut icon" href="<?=base_url()?>images/favicon.ico" />-->
+    <link rel="shortcut icon" href="<?=base_url()?>images/favicon.ico" />
     <link href="style/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="scripts/jquery.js"></script>
     <link href="style/screen.css" rel="stylesheet" type="text/css" media="screen" />

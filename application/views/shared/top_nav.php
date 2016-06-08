@@ -1,7 +1,7 @@
 <?php $main_cat = common::get_main_cat() ?>
 <!--testing-->
 <style type="text/css">
-
+.nav{margin-top: 120px;}
     .nav ul {
         list-style: none;
         background-color: #444;
@@ -10,14 +10,15 @@
         margin: 0;
         text-align:left;
         position: absolute;
-    z-index: 2;
-    width: 100%;
+        z-index: 2;
+        width: 100%;
+        
     }
 
     .nav li {
         line-height: 40px;
         text-align: left;
-        
+
     }
 
     .nav a {
@@ -158,48 +159,46 @@
 
 
     <ul>
-        <li><a href="<?php echo site_url('home');?>">Home</a></li>
+        <li><a href="<?php echo site_url('home'); ?>">Home</a></li>
         <?php foreach ($main_cat as $m_cat) { ?>
-        <li><a href="<?php echo site_url('product/sub_cat_list/' . $m_cat['id']) ?>"><?php echo $m_cat['category_name'] ?></a>
+            <li><a href="<?php echo site_url('product/sub_cat_list/' . $m_cat['id']) ?>"><?php echo $m_cat['category_name'] ?></a>
 
-                <?php $sub_cat = $this->mod_home->get_sub_cat($m_cat['id']);
+                <?php
+                $sub_cat = $this->mod_home->get_sub_cat($m_cat['id']);
                 if (count($sub_cat) > 0) {
-
                     ?>
-            <i></i>
+                    <i></i>
 
-            <ul>
+                    <ul>
 
 
                         <?php
                         foreach ($sub_cat as $sub) {
                             ?>
 
-                <li><a href="<?php echo site_url('product/sub_cat_product/' . $sub['id']) ?>"><?php echo substr($sub['category_name'],0,22) ?></a>
+                            <li><a href="<?php echo site_url('product/sub_cat_product/' . $sub['id']) ?>"><?php echo substr($sub['category_name'], 0, 22) ?></a>
 
                                 <?php
                                 $three_cat = $this->mod_home->get_sub_cat($sub['id']);
-                                if (count($three_cat) > 0) {?>
+                                if (count($three_cat) > 0) {
+                                    ?>
 
-                    <i></i>
-                    <ul>
-                                        <?php
-                                        foreach ($three_cat as $third) { ?>
-                        <li><a href="<?php echo site_url('product/sub_cat_product/' . $third['id']) ?>"><?php echo substr($third['category_name'],0,22); ?></a></li>
-                                            <?php }
-
+                                    <i></i>
+                                    <ul>
+                                        <?php foreach ($three_cat as $third) { ?>
+                                            <li><a href="<?php echo site_url('product/sub_cat_product/' . $third['id']) ?>"><?php echo substr($third['category_name'], 0, 22); ?></a></li>
+                                        <?php }
                                         ?>
-                    </ul>
-                                    <?php }?>
-                </li>
-                            <?php }
-
+                                    </ul>
+                                <?php } ?>
+                            </li>
+                        <?php }
                         ?>
-            </ul>
-                    <?php }?>
+                    </ul>
+                    <?php } ?>
 
-        </li>
-            <?php }?>
+            </li>
+<?php } ?>
     </ul>
 
 
