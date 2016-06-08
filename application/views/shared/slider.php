@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="<?php echo base_url() ?>style/vanillaSlideshow.css">
-<div class="slider_banner" style="overflow:hidden;height:400px;position:relative;border:0;margin-top:170px;">
+<div class="slider_banner" style="overflow:hidden;height:400px;position:relative;border:0;margin-top:13px;">
     <div class="slider" style="position:absolute;z-index:0;width:100%;border:0;">
         <div id="vanilla-slideshow-container">
             <div id="vanilla-slideshow">

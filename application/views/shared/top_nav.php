@@ -1,7 +1,7 @@
 <?php $main_cat = common::get_main_cat() ?>
 <!--testing-->
 <style type="text/css">
-.nav{margin-top: 120px;}
+    .nav{margin-top: 10px;}
     .nav ul {
         list-style: none;
         background-color: #444;
@@ -12,7 +12,7 @@
         position: absolute;
         z-index: 2;
         width: 100%;
-        
+
     }
 
     .nav li {
@@ -195,10 +195,10 @@
                         <?php }
                         ?>
                     </ul>
-                    <?php } ?>
+                <?php } ?>
 
             </li>
-<?php } ?>
+        <?php } ?>
     </ul>
 
 

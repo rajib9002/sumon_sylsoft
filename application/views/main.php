@@ -17,6 +17,7 @@
             z-index:999999;
             position:fixed;
             background-color:#fff;
+            /*display:none;*/
         }
         #content_new {
             padding-top:70px;
@@ -26,9 +27,9 @@
         }
         #footer_new {
             width:100%;
-           /* position:fixed;
-            bottom:0;
-            left:0;*/
+            /* position:fixed;
+             bottom:0;
+             left:0;*/
         }
     </style>
 
@@ -39,19 +40,19 @@
         <div id="wrapper_new"style="margin:0;">
             <div id="header_new">
                 <?php include_once 'shared/top.php'; ?>
+                <?php include_once 'shared/top_nav.php'; ?>
             </div>
             <div class="clear"></div>
-            <div style="height:40px;">&nbsp;</div>
-            <div class="header_bg"></div>
+            <div style="height:200px;">&nbsp;</div>
 
-            <?php include_once 'shared/top_nav.php'; ?>
+
 
             <?php include_once 'shared/slider.php'; ?>
 
 
             <div class="main_content">
                 <div class="center_content">
-                    <div class="float_left" style="width:80%">
+                    <div  style="width:1122px;margin:30px auto;">
                         <?php
                         if ($dir == '') {
                             $dir = 'home';
