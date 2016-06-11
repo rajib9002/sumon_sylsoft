@@ -1,5 +1,5 @@
-function cancelSelectFile()
-{
-    // close popup window
-    window.close();
+function cancelSelectFile()
+{
+    // close popup window
+    window.close();
 }
