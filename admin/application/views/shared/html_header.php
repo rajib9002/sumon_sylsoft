@@ -1,6 +1,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>zafran Admin::<?php echo $title?></title>
+    <title>Admin::<?php echo $title?></title>
     <base href="<?=base_url()?>" />
     <link href="<?=base_url()?>/style/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="tools/superfish/css/superfish.css" media="screen" />

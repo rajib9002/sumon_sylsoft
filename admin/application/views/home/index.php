@@ -1,1 +1,1 @@
-<h1><?=lang('label_welcome')?></h1>
+<h1></h1>
