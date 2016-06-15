@@ -1,2 +1,0 @@
-<p><strong>About Us:</strong></p>
-<p>Our mission is simple: to provide the best products and service to our customers at the lowest prices possible. We take great pride in our company, our commitment to customer service and in the products we sell. Our online store is designed to provide you with a safe and secure environment to browse our product catalog.</p>
